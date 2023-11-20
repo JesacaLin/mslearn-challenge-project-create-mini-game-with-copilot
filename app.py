@@ -19,19 +19,19 @@ def play_game(rounds, wins, losses):
         print('Invalid input. Please try again.')
         return play_game(rounds, wins, losses)
     
-    # create a variable called computer_choice and call the computer_choice function to get the computer's choice
-    computer_choice = computer_choice()
+    # create a variable called computer and call the computer_choice function to get the computer's choice
+    computer = computer_choice()
 
     # increment rounds by 1
     rounds += 1
 
     # check for a tie. if the user's choice is the same as the computer's choice, print a message saying it's a tie and return the function.
-    if user_choice == computer_choice:
+    if user_choice == computer:
         print('It\'s a tie!')
         return play_game(rounds, wins, losses)
     
     # check for a win. if the user's choice is rock and the computer's choice is scissors, or if the user's choice is paper and the computer's choice is rock, or if the user's choice is scissors and the computer's choice is paper, print a message saying the user won and increment wins by 1.
-    if (user_choice == 'rock' and computer_choice == 'scissors') or (user_choice == 'paper' and computer_choice == 'rock') or (user_choice == 'scissors' and computer_choice == 'paper'):
+    if (user_choice == 'rock' and computer == 'scissors') or (user_choice == 'paper' and computer == 'rock') or (user_choice == 'scissors' and computer == 'paper'):
         print('You won!')
         wins += 1
         # else print a message saying the user lost and increment losses by 1.
@@ -40,7 +40,7 @@ def play_game(rounds, wins, losses):
         losses += 1
 
     # call the play_again function
-    play_again()
+    play_again(rounds, wins, losses)
 
 
 
